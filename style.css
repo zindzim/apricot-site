@@ -73,14 +73,6 @@ h1, h2, h3, .display {
 .features h3 { font-size: 26px; margin-bottom: 6px; }
 .features p { margin: 0; color: var(--ink-soft); }
 
-.note {
-  margin: 56px 0 0;
-  padding-top: 32px;
-  border-top: 1px solid var(--hairline);
-  color: var(--ink-faint);
-  font-size: 15px;
-}
-
 /* Long-form pages share the home page's hero, smaller, and its feature headings. */
 
 .hero-small { padding: 56px 0 8px; }
