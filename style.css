@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("fonts/CormorantGaramond-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+/* Apricot's palette, from Shared/Palette.swift. */
+:root {
+  --paper: #fff8ee;
+  --ink: #1a1918;
+  --ink-soft: #333230;
+  --ink-faint: #6f6a64;
+  --link: #b8612a;
+  --hairline: rgba(26, 25, 24, 0.08);
+  --shadow: rgba(92, 62, 32, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+h1, h2, h3, .display {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.wrap { max-width: 720px; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px; }
+
+/* Hero */
+
+.hero { text-align: center; padding: 72px 0 40px; }
+.hero .fruit {
+  width: 200px; height: 200px;
+  filter: drop-shadow(0 1px 0.5px var(--shadow)) drop-shadow(0 6px 5px var(--shadow));
+}
+.hero h1 { font-size: 64px; margin-top: 12px; }
+.hero .tagline { font-size: 20px; color: var(--ink-soft); margin: 8px 0 32px; }
+
+.badge {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.badge.soon { background: transparent; color: var(--ink-soft); box-shadow: inset 0 0 0 1px var(--hairline), 0 0 0 1px var(--hairline); }
+
+/* Features */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px 48px;
+  padding: 80px 0 24px;
+}
+.features h3 { font-size: 26px; margin-bottom: 6px; }
+.features p { margin: 0; color: var(--ink-soft); }
+
+.note {
+  margin: 56px 0 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--hairline);
+  color: var(--ink-faint);
+  font-size: 15px;
+}
+
+/* Long-form pages share the home page's hero, smaller, and its feature headings. */
+
+.hero-small { padding: 56px 0 8px; }
+.hero-small .home { display: inline-block; color: var(--ink); text-decoration: none; }
+.hero-small .fruit { width: 96px; height: 96px; display: block; margin: 0 auto; }
+.hero-small .home .display { display: block; font-size: 26px; margin-top: 4px; }
+.hero-small h1 { font-size: 52px; margin-top: 28px; }
+.hero-small .tagline { font-size: 16px; color: var(--ink-faint); margin-bottom: 0; }
+
+.page { padding-top: 40px; padding-bottom: 24px; }
+.page .lede { font-size: 20px; color: var(--ink); text-align: center; margin: 0 0 48px; padding-bottom: 40px; border-bottom: 1px solid var(--hairline); }
+.page h2 { font-size: 26px; margin: 36px 0 6px; }
+.page p, .page li { color: var(--ink-soft); margin: 0; }
+.page p + p, .page p + ul, .page ul + p { margin-top: 12px; }
+.page ul { padding-left: 22px; }
+.page li + li { margin-top: 4px; }
+
+/* Footer */
+
+footer {
+  padding: 48px 0 56px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--ink-faint);
+}
+footer nav { display: flex; justify-content: center; gap: 24px; margin-bottom: 8px; }
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .hero { padding-top: 48px; }
+  .hero .fruit { width: 160px; height: 160px; }
+  .hero h1 { font-size: 52px; }
+  .features { grid-template-columns: 1fr; gap: 28px; padding-top: 64px; }
+  .wrap { padding-left: 20px; padding-right: 20px; }
+  .hero-small { padding-top: 40px; }
+  .hero-small .fruit { width: 88px; height: 88px; }
+  .hero-small h1 { font-size: 42px; }
+}
